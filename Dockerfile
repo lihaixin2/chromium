@@ -11,9 +11,8 @@ ENV TZ "Asia/Shanghai"
 ENV VNC_PW "vncpassword"
 ENV DISPLAY :0
 
-ENV PURL 8.8.8.8
-ENV PPORT 6000
-ENV PPASSWORD  username:pass123
+ENV PURL 8.8.8.8:6666
+ENV PPASSWORD  username:password
 
 
 #升级仓库，安装基本网络包
