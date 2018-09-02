@@ -1,6 +1,7 @@
 FROM lihaixin/novnc
 MAINTAINER Haixin Lee <docker@lihaixin.name>
 
+# polipo version
 #加载flash仓库源
 RUN echo "deb http://archive.canonical.com/ubuntu/ xenial partner" >> /etc/apt/sources.list
 
