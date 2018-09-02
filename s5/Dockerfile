@@ -44,7 +44,7 @@ RUN git clone --recursive https://github.com/kanaka/noVNC.git /opt/novnc && \
         ln -s /opt/novnc/vnc.html /opt/novnc/index.html
 
 #安装chromium 和tsocks
-RUN apt-get install -y --no-install-recommends chromium-browser  tsocks
+RUN apt-get install -y --no-install-recommends chromium-browser
 
 #安装shadowsocks
 RUN apt-get install -y python-pip python-m2crypto && \
