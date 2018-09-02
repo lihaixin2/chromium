@@ -7,7 +7,7 @@ RUN echo "deb http://archive.canonical.com/ubuntu/ xenial partner" >> /etc/apt/s
 
 #升级系统，安装chromium和flash多媒体插件 polipo代理程序
 RUN apt-get update -y && \
- apt-get install  -y --no-install-recommends adobe-flashplugin chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg
+ apt-get install  -y --no-install-recommends adobe-flashplugin chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg polipo
 
 
 # 升级到最新版本
