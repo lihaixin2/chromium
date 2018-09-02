@@ -13,7 +13,7 @@ ENV DISPLAY :0
 
 ENV PURL 8.8.8.8
 ENV PPORT 6000
-ENV PPASSWORD  pass123
+ENV PPASSWORD  username:pass123
 
 
 #升级仓库，安装基本网络包
@@ -43,14 +43,9 @@ RUN git clone --recursive https://github.com/kanaka/noVNC.git /opt/novnc && \
         git clone --recursive https://github.com/kanaka/websockify.git /opt/novnc/utils/websockify && \
         ln -s /opt/novnc/vnc.html /opt/novnc/index.html
 
-#安装chromium 和tsocks
-RUN apt-get install -y --no-install-recommends chromium-browser  tsocks
+#安装chromium 和polipo
+RUN apt-get install -y --no-install-recommends chromium-browser  polipo
 
-#安装shadowsocks
-RUN apt-get install -y python-pip python-m2crypto && \
- pip install --upgrade pip && \
-        pip install shadowsocks && \
-        pip install --upgrade tzupdate
 
 # 升级到最新版本 删除不必要的软件和Apt缓存包列表
 RUN  apt-get upgrade --yes && \
@@ -60,7 +55,6 @@ RUN  apt-get upgrade --yes && \
 
 # 容器里超级进程管理和配置文件
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-COPY tsocks.conf /etc/tsocks.conf
 COPY myrun /usr/bin/myrun
 RUN chmod +x /usr/bin/myrun
 
