@@ -21,7 +21,9 @@ RUN apt-get -y autoclean && \
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # 开放VNC端口和noVNC端口
-EXPOSE 5900 8787
+#EXPOSE 5900 
+EXPOSE 8787
+VOLUME /root/Downloads
 
 
 
