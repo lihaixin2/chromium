@@ -13,8 +13,8 @@ RUN apt-get update -y && \
 RUN apt-get upgrade --yes
 
 # 删除不必要的软件和Apt缓存包列表
-RUN apt-get autoclean && \
-    apt-get autoremove && \
+RUN apt-get -y autoclean && \
+    apt-get -y autoremove && \
     rm -rf /var/lib/apt/lists/*
 
 # 容器里超级进程管理
