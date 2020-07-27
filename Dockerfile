@@ -4,9 +4,14 @@ MAINTAINER Haixin Lee <docker@lihaixin.name>
 #加载flash仓库源
 RUN echo "deb http://archive.canonical.com/ubuntu/ xenial partner" >> /etc/apt/sources.list
 
-#升级系统，安装chromium和flash多媒体插件
+#升级系统，安装chromium和flash多媒体插件和gzip解压软件和下载gost
 RUN apt-get update -y && \
- apt-get install  -y --no-install-recommends adobe-flashplugin chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg
+    apt-get install  -y --no-install-recommends adobe-flashplugin chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg gzip && \
+    wget "https://github.com/ginuerzh/gost/releases/download/v2.11.0/gost-linux-amd64-2.11.0.gz" && \
+    gzip -d gost-linux-amd64-2.11.0.gz && \
+    mv gost-linux-amd64-2.11.0 /usr/bin/gost && \
+    chmod +x /usr/bin/gost
+    
 
 
 # 升级到最新版本
