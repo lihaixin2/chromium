@@ -1,5 +1,6 @@
 FROM lihaixin/novnc
 MAINTAINER Haixin Lee <docker@lihaixin.name>
+ENV ENV_PROXY_URL="socks5://User-001:qq159@50.117.22.53:13092"
 
 #加载flash仓库源
 RUN echo "deb http://archive.canonical.com/ubuntu/ xenial partner" >> /etc/apt/sources.list
