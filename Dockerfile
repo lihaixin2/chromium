@@ -19,6 +19,8 @@ RUN apt-get -y autoclean && \
 
 # 容器里超级进程管理
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY myrun /usr/bin/myrun
+RUN chmod +x /usr/bin/myrun
 
 # 开放VNC端口和noVNC端口
 #EXPOSE 5900 
