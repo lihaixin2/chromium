@@ -6,7 +6,7 @@
 
 ###运行容器
 
-	docker run -d -p 5900:5900 -p 8787:8787 --name chromium lihaixin/chromium
+	docker run -d -p 5900:5900 -p 8787:8787 --shm-size 2g --name chromium lihaixin/chromium
 
 ###修改VNC密码
 
